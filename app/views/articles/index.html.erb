@@ -1,0 +1,7 @@
+<h1>Article listing</h1>
+
+<% @articles.each do |article| %>
+  <p><%= article.title %></p>
+  <p><%= image_tag(article.image_url) %>
+  <p><%= article.description %></p>
+<% end %>
