@@ -1,9 +1,23 @@
-<h1>Articles show</h1>
+<div id="page-content">
+  <div class="container">
+    
+    <div class="row">
+     <h1><%= @article.title %></h1>
+    </div>
+    
+    <div class="row">
+    <div class="col-6 col-md-6">
+      <%= image_tag(@article.image_url) %>
+    </div>
+    <div class="col-6 col-md-6">
+      <p><%= @article.description %></p>
+      <h5>Created: <%= time_ago_in_words(@article.created_at) %> ago</h5>
+      <%= link_to 'Edit', edit_article_path(@article) %> |
+      <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you shure?"} %>
+    </div>
+    
+     </div>
 
-<p> <%= @article.title %></p>
-<p>	<%= image_tag(@article.image_url) %></p>
-<p><%= @article.description %></p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you shure?"} %> |
-<%= link_to 'Return', articles_path %>
+  </div>
+</div>
+<%= render 'layouts/footer' %>
