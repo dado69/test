@@ -1,4 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Quattrocento:wght@400;700&family=Satisfy&display=swap');
 
 img {
   max-width: 100%;
@@ -41,8 +42,8 @@ body {
 }
 #page-content {
   flex: 1 0 auto;
-  margin: 25px auto;
 }
 .bg-black {
   background-color: #000;
 }
+
