@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params.require(:article).permit(:title, :description, :image_url))
+    @article.user = User.first
     if @article.save
       flash[:notice] = "Article was createtd successfuly!"
       redirect_to article_path(@article)
