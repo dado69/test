@@ -11,6 +11,7 @@
           <%= image_tag(article.image_url) %>
         <% end %>
         <h3><%= link_to article.title, article_path(article) %></h3>
+        <p class="font-italic">by <%= article.user.username if article.user %></p>
       </div>
     <% end %>
   </div>

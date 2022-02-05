@@ -11,6 +11,7 @@
   <div class="col-md-6 col-sm-12">
     <p><%= @article.description %></p>
     <h5>Created: <%= time_ago_in_words(@article.created_at) %> ago</h5>
+    <p class="font-italic">by <%= @article.user.username if @article.user %></p>
     <%= link_to 'Edit', edit_article_path(@article) %> |
     <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you shure?"} %>
   </div>
