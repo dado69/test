@@ -5,7 +5,11 @@
         <%= image_tag(article.image_url) %>
       <% end %>
       <h3><%= link_to article.title, article_path(article) %></h3>
-      <p class="font-italic"> <%= article.user.username if article.user %></p>
+      <p class="font-italic"> 
+      <% if article.user %>
+      <%= link_to article.user.username, user_path(article.user) %>
+      <% end %>
+      </p>
     </div>
   <% end %>
 </div>

@@ -1,12 +1,15 @@
 <div class="container">
   <h1>Blogers</h1>
+  <div class="flickr_pagination mb-4">
+    <%= will_paginate @users, :container => false %>
+  </div>
   <div class="row">
-  <% @users.each do |user| %>
-    <div class="col-4 col-md-4 article-index">
-      <p class="font-italic">
-        <%= link_to user.username, user %>
-      </p>
-    </div>
-  <% end %>
-</div>
+    <% @users.each do |user| %>
+      <div class="col-4 col-md-4 article-index">
+        <p class="font-italic text-center">
+          <%= link_to user.username, user %>
+        </p>
+      </div>
+    <% end %>
+  </div>
 </div>
