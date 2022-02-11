@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Blogers</h1>
+  <div class="row">
+  <% @users.each do |user| %>
+    <div class="col-4 col-md-4 article-index">
+      <p class="font-italic">
+        <%= link_to user.username, user %>
+      </p>
+    </div>
+  <% end %>
+</div>
+</div>
