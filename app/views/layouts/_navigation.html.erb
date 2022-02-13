@@ -5,6 +5,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    
       <li class="nav-item">
         <%= link_to 'About', about_path, class: "nav-link"  %>
       </li>
@@ -15,11 +16,14 @@
         <%= link_to 'Blogers', users_path, class: "nav-link"  %>
       </li>
       <li class="nav-item">
+      <% if logged_in? %>
         <%= link_to 'Create new!', new_article_path, class: "nav-link"  %>
+      <% end %>  
       </li>
 
       <% if logged_in? %>
         <li class="nav-item">
+          <%= "(Admin)" if current_user.admin? %>
           <%= link_to current_user.username, user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item">

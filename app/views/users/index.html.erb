@@ -6,9 +6,18 @@
   <div class="row">
     <% @users.each do |user| %>
       <div class="col-4 col-md-4 article-index">
-        <p class="font-italic text-center">
-          <%= link_to user.username, user %>
-        </p>
+        <p class="font-italic text-center"><%= link_to user.username, user %></p>
+        <p><%= pluralize(user.articles.count, "article") %></p>
+        <%= link_to "View profile", user, class: "btn btn-outline-succes" %>
+        <% if logged_in? %>
+          <% if user == current_user %>
+            <%= link_to "Edit profile", edit_user_path(user), class: "btn" %>
+          <% end %>
+          <% if current_user.admin? %>
+            <%= link_to "Delete user", user_path(user), class: "btn", method: :delete,
+            data: {confirm: "Are you shure you want to delete the user"}  %>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
